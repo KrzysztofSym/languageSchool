@@ -1,0 +1,157 @@
+#third {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 960 540" width="960" height="540" version="1.1"><g fill="%23ABEBC6"><circle r="113" cx="803" cy="342"/><circle r="43" cx="420" cy="40"/><circle r="42" cx="579" cy="381"/><circle r="60" cx="99" cy="405"/><circle r="67" cx="645" cy="125"/><circle r="83" cx="258" cy="242"/></g></svg>');
+}
+
+button:hover {
+    animation: move 500ms linear infinite;
+}
+
+.fadeIn {
+    transform: translateX(var(--xTransform));
+    animation: fadeIn 500ms linear forwards;
+    animation-delay: var(--delay);
+}
+
+.fadeInRight {
+    transform: translateX(var(--xTransform));
+    animation: fadeIn 500ms linear forwards;
+    animation-delay: var(--delay);
+}
+
+.pop {
+    animation: pop 1000ms linear forwards;
+}
+
+.floatAnim {
+    animation: float 1000ms ease-in-out alternate infinite;
+    translate: -10% 0;
+}
+
+.floatAnim2 {
+    animation: float 1000ms ease-in-out alternate infinite;
+    translate: -250% 0;
+}
+
+.stagger {
+    animation: stagger 1000ms ease-in-out forwards;
+    animation-delay: var(--delay);
+}
+
+.stagger:hover {
+    box-shadow: 10px 10px 0px #d5ddff,
+                -10px -10px 0px #d5ddff,
+                0 0 30px #d5ddff;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(var(--xTransform));
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(var(--xTransform));
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    40% {
+        opacity: 1;
+        scale: 1.1;
+    }
+    70% {
+        opacity: 1;
+        scale: 0.9;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(10%);
+    }
+}
+
+@keyframes stagger {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
+}
+
+@-moz-keyframes move {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
+}
+
+@media (max-width: 1300px) {
+    .floatAnim {
+        translate: -100% 0;
+    }
+
+    .floatAnim2 {
+        translate: -10% -20%
+    }
+}
